@@ -42,6 +42,9 @@ class FrameworkResource extends Resource
                             ->label('カテゴリー名')
                             ->required(),
                     ]),
+                Forms\Components\FileUpload::make('image')
+                    ->directory('images')
+                    ->preserveFilenames(),
             ]);
     }
 
