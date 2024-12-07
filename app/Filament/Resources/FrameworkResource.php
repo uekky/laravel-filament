@@ -36,6 +36,11 @@ class FrameworkResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->label('カテゴリー名')
                             ->required(),
+                    ])
+                    ->editOptionForm([
+                        Forms\Components\TextInput::make('name')
+                            ->label('カテゴリー名')
+                            ->required(),
                     ]),
             ]);
     }
