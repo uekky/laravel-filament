@@ -18,8 +18,18 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+use Illuminate\Support\Facades\Blade;
+use Filament\Support\Facades\FilamentView;
+
 class AdminPanelProvider extends PanelProvider
 {
+
+    public function register(): void
+    {
+        parent::register();
+        FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/js/app.js')"));
+    }
+
     public function panel(Panel $panel): Panel
     {
         return $panel
