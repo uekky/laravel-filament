@@ -26,6 +26,9 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('名前')
+                    ->placeholder('カテゴリー名')
+                    ->helperText('カテゴリー名を入力してください')
                     ->required(),
             ]);
     }
