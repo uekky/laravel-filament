@@ -29,7 +29,7 @@ class CategoryResource extends Resource
                     ->label('名前')
                     ->placeholder('カテゴリー名')
                     ->helperText('カテゴリー名を入力してください')
-                    ->required(),
+                    ->rules('required'),
             ]);
     }
 
