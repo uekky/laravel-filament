@@ -42,8 +42,10 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                ->label('名前')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
+                ->label('メールアドレス')
                     ->searchable(),
                 // Tables\Columns\TextColumn::make('email_verified_at')
                 //     ->dateTime()
