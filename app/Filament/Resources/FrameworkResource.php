@@ -27,7 +27,7 @@ class FrameworkResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->columnSpanFull(),
                 Forms\Components\Select::make('category_id')
                     ->relationship('category', 'name')
@@ -49,11 +49,14 @@ class FrameworkResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('category.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable()
+                    ->limit(20),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
