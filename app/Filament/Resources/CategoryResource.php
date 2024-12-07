@@ -52,6 +52,7 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
+                //actionボタンを右側に表示する
                 Tables\Actions\EditAction::make()->slideOver(),
             ])
             ->bulkActions([
